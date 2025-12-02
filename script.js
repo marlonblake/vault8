@@ -1,4 +1,4 @@
-let currentNode = tree;
+let currentNode = path;
 
 function updateUI() {
       console.log(currentNode);
@@ -9,12 +9,12 @@ function updateUI() {
       const leftBtn = document.getElementById("leftBtn");
       const rightBtn = document.getElementById("rightBtn");
 
-      q.textContent = currentNode.question;
+      q.innerHTML = currentNode.question;
 
       // Show button labels when the text exists, even if the node has no child.
       // Disable the button when there's no child to navigate to.
       if (typeof currentNode.leftText !== "undefined" && currentNode.leftText !== null) {
-            leftBtn.textContent = currentNode.leftText;
+            leftBtn.innerHTML = currentNode.leftText;
             leftBtn.style.display = "inline-block";
             leftBtn.disabled = !currentNode.left;
       } else {
@@ -22,7 +22,7 @@ function updateUI() {
       }
 
       if (typeof currentNode.rightText !== "undefined" && currentNode.rightText !== null) {
-            rightBtn.textContent = currentNode.rightText;
+            rightBtn.innerHTML = currentNode.rightText;
             rightBtn.style.display = "inline-block";
             rightBtn.disabled = !currentNode.right;
       } else {
