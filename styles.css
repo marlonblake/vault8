@@ -39,7 +39,7 @@ h1{
     text-shadow:0 0 6px rgba(255,255,255,0.02);
 }
 
-.description{
+.question{
     width:100%;
     margin-top:6vh;
     text-align:center;
@@ -76,6 +76,6 @@ h1{
 @media (max-width:420px){
     .screen{max-width:90%}
     h1{font-size:22px}
-    .description{font-size:14px}
+    .question{font-size:14px}
     .btn{padding:12px 8px}
 }
