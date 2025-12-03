@@ -39,8 +39,8 @@ const path = {
                 leftText: "Continue walking",
                 rightText: "Wait and look around",
                 left: {
-                    question: "Someone grabs you from behind and takes you away",
-                    leftText: "<span style='color: red;'>GAME OVER</span>",
+                    question: "Someone grabs you from behind and takes you away<br><span style='color: red;'>GAME OVER</span>",
+                    leftText: null,
                     rightText: "Try Again",
                     left: null,
                     right: null
@@ -66,8 +66,8 @@ const path = {
                         leftText: "Right",
                         rightText: "Left",
                         left: {
-                            question: "A leaking yellow gas makes you fall unconscious",
-                            leftText: "<span style='color: red;'>GAME OVER</span>",
+                            question: "A leaking yellow gas makes you fall unconscious<br><span style='color: red;'>GAME OVER</span>",
+                            leftText: null,
                             rightText: "Try Again",
                             left: null,
                             right: null
@@ -105,8 +105,8 @@ const path = {
                 leftText: "Yes",
                 rightText: "No, go some other way",
                 left: {
-                    question: "The sound starts ringing repeatedly in your head intensly until you pass out.",
-                    leftText: "<span style='color: red;'>GAME OVER</span>",
+                    question: "The sound starts ringing repeatedly in your head intensly until you pass out.<br><span style='color: red;'>GAME OVER</span>",
+                    leftText: null,
                     rightText: "Try Again",
                     left: null,
                     right: null
@@ -169,8 +169,8 @@ const path = {
                             leftText: "Inspect the cloth",
                             rightText: "Leave and walk ahead",
                             left: {
-                                question: "A trap net emerges from the ground and captures you.",
-                                leftText: "<span style='color: red;'>GAME OVER</span>",
+                                question: "A trap net emerges from the ground and captures you.<br><span style='color: red;'>GAME OVER</span>",
+                                leftText: null,
                                 rightText: "Try Again",
                                 left: null,
                                 right: null
