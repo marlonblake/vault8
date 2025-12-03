@@ -73,6 +73,19 @@ h1{
     border-radius:6px;
 }
 
+#backBtn {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    padding: 3px 6px;
+    font-size: 10px;
+    border: 1px solid #040404;
+    background: #040404;
+    color: #a9a9a9;
+    cursor: pointer;
+}
+
+
 @media (max-width:420px){
     .screen{max-width:90%}
     h1{font-size:22px}
