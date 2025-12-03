@@ -1,5 +1,9 @@
 let currentNode = path;
 
+function closeWindow(){
+        window.open(window.location, '_self').close();
+     }
+
 function updateUI() {
       console.log(currentNode);
       console.log("Left text:", currentNode.leftText);
@@ -47,6 +51,11 @@ document.getElementById("rightBtn").addEventListener("click", () => {
       if (currentNode.rightText === "Try Again") {
             currentNode = path;
             updateUI();
+            return;
+      }
+
+      if (currentNode.rightText === "Quit") {
+            closeWindow();
             return;
       }
 
