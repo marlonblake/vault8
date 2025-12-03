@@ -61,7 +61,7 @@ h1{
 
 .btn{
     flex:1 1 0;
-    border:2px solid rgba(255,255,255,0.06);
+    border: none;
     background:transparent;
     padding:14px 12px;
     font-family:'VT323', monospace;
@@ -79,16 +79,16 @@ h1{
     left: 5px;
     padding: 3px 6px;
     font-size: 10px;
-    border: 1px solid #040404;
+    border: none;
     background: #040404;
     color: #a9a9a9;
     cursor: pointer;
 }
 
 
-@media (max-width:420px){
-    .screen{max-width:90%}
-    h1{font-size:22px}
-    .question{font-size:14px}
-    .btn{padding:12px 8px}
+@media (max-width:600px){
+    .screen{max-width:95%}
+    h1{font-size:38px}
+    .question{font-size:27px}
+    .btn{padding:12px 8px; font-size:27px}
 }

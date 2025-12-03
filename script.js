@@ -51,6 +51,12 @@ document.getElementById("leftBtn").addEventListener("click", () => {
             return;
       }
 
+      if (currentNode.leftText === "Check it out") {
+            currentNode = path.left.right.left.right.left;
+            updateUI();
+            return;
+      }
+
       if (currentNode.left) {
             currentNode = currentNode.left;
             updateUI();
@@ -58,6 +64,18 @@ document.getElementById("leftBtn").addEventListener("click", () => {
 });
 
 document.getElementById("rightBtn").addEventListener("click", () => {
+      if (currentNode.rightText === "Turn around") {
+            currentNode = path.right;
+            updateUI();
+            return;
+      }
+
+      if (currentNode.rightText === "Go opposite way") {
+            currentNode = path.left.right.left.right.right;
+            updateUI();
+            return;
+      }
+
       if (currentNode.rightText === "Try Again") {
             currentNode = path;
             updateUI();
