@@ -1,8 +1,18 @@
 let currentNode = path;
 
-function closeWindow(){
-        window.open(window.location, '_self').close();
-     }
+// Assign parent to every node
+function assignParents(node, parent = null) {
+      node.parent = parent;
+
+      if (node.left) assignParents(node.left, node);
+      if (node.right) assignParents(node.right, node);
+}
+
+assignParents(path);
+
+function closeWindow() {
+      window.open(window.location, '_self').close();
+}
 
 function updateUI() {
       console.log(currentNode);
@@ -12,26 +22,26 @@ function updateUI() {
       const q = document.getElementById("question");
       const leftBtn = document.getElementById("leftBtn");
       const rightBtn = document.getElementById("rightBtn");
+      const backBtn = document.getElementById("backBtn");
 
       q.innerHTML = currentNode.question;
 
-      // Show button labels when the text exists, even if the node has no child.
-      // Disable the button when there's no child to navigate to.
-      if (typeof currentNode.leftText !== "undefined" && currentNode.leftText !== null) {
+      if (currentNode.leftText !== undefined && currentNode.leftText !== null) {
             leftBtn.innerHTML = currentNode.leftText;
             leftBtn.style.display = "inline-block";
-            // leftBtn.disabled = !currentNode.left;
       } else {
             leftBtn.style.display = "none";
       }
 
-      if (typeof currentNode.rightText !== "undefined" && currentNode.rightText !== null) {
+      if (currentNode.rightText !== undefined && currentNode.rightText !== null) {
             rightBtn.innerHTML = currentNode.rightText;
             rightBtn.style.display = "inline-block";
-            // rightBtn.disabled = !currentNode.right;
       } else {
             rightBtn.style.display = "none";
       }
+
+      // Back button visibility
+      backBtn.style.display = currentNode.parent ? "inline-block" : "none";
 }
 
 document.getElementById("leftBtn").addEventListener("click", () => {
@@ -61,6 +71,13 @@ document.getElementById("rightBtn").addEventListener("click", () => {
 
       if (currentNode.right) {
             currentNode = currentNode.right;
+            updateUI();
+      }
+});
+
+document.getElementById("backBtn").addEventListener("click", () => {
+      if (currentNode.parent) {
+            currentNode = currentNode.parent;
             updateUI();
       }
 });
