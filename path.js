@@ -76,8 +76,20 @@ const path = {
                             question: "You see a light at the end of the tunnel. It's the vault. Do you have the key?",
                             leftText: "Yes",
                             rightText: "No",
-                            left: null,
-                            right: null
+                            left: {
+                                question: "You have unclocked the vault.<br>Your code is 1235789",
+                                leftText: null,
+                                rightText: "Quit",
+                                left: null,
+                                right: null
+                            },
+                            right: {
+                                question: "You choose right!!",
+                                leftText: "Left",
+                                rightText: "Right",
+                                left: null,
+                                right: null
+                            }
                         }
                     }
                 },

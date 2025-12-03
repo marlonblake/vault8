@@ -65,9 +65,9 @@ h1{
     background:transparent;
     padding:14px 12px;
     font-family:'VT323', monospace;
-    font-size:22px;
+    font-size:28px;
     letter-spacing:1px;
-    color:var(--accent);
+    color:var(--muted);
     text-align:center;
     cursor:pointer;
     border-radius:6px;
