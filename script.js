@@ -16,7 +16,7 @@ function updateUI() {
       if (typeof currentNode.leftText !== "undefined" && currentNode.leftText !== null) {
             leftBtn.innerHTML = currentNode.leftText;
             leftBtn.style.display = "inline-block";
-            leftBtn.disabled = !currentNode.left;
+            // leftBtn.disabled = !currentNode.left;
       } else {
             leftBtn.style.display = "none";
       }
@@ -24,13 +24,19 @@ function updateUI() {
       if (typeof currentNode.rightText !== "undefined" && currentNode.rightText !== null) {
             rightBtn.innerHTML = currentNode.rightText;
             rightBtn.style.display = "inline-block";
-            rightBtn.disabled = !currentNode.right;
+            // rightBtn.disabled = !currentNode.right;
       } else {
             rightBtn.style.display = "none";
       }
 }
 
 document.getElementById("leftBtn").addEventListener("click", () => {
+      if (currentNode.leftText === "City Road") {
+            currentNode = path.left;
+            updateUI();
+            return;
+      }
+
       if (currentNode.left) {
             currentNode = currentNode.left;
             updateUI();
@@ -38,6 +44,12 @@ document.getElementById("leftBtn").addEventListener("click", () => {
 });
 
 document.getElementById("rightBtn").addEventListener("click", () => {
+      if (currentNode.rightText === "Try Again") {
+            currentNode = path;
+            updateUI();
+            return;
+      }
+
       if (currentNode.right) {
             currentNode = currentNode.right;
             updateUI();
