@@ -1,4 +1,5 @@
 let currentNode = path;
+let key = false;
 
 // Assign parent to every node
 function assignParents(node, parent = null) {
@@ -40,13 +41,29 @@ function updateUI() {
             rightBtn.style.display = "none";
       }
 
+      if (key === false) {
+            path.left.right.left.right.left.left.right.leftText = null
+      } else {
+            path.left.right.left.right.left.left.right.leftText = "Yes";
+      }
+
       // Back button visibility
       backBtn.style.display = currentNode.parent ? "inline-block" : "none";
 }
 
 document.getElementById("leftBtn").addEventListener("click", () => {
+      const audio = new Audio('audio/Beep.mp3');
+      audio.play();
+
       if (currentNode.leftText === "City Road") {
             currentNode = path.left;
+            updateUI();
+            return;
+      }
+
+      if (currentNode.leftText === "Take the key") {
+            key = true;
+            currentNode = currentNode.left;
             updateUI();
             return;
       }
@@ -64,6 +81,9 @@ document.getElementById("leftBtn").addEventListener("click", () => {
 });
 
 document.getElementById("rightBtn").addEventListener("click", () => {
+      const audio = new Audio('audio/Beep.mp3');
+      audio.play();
+
       if (currentNode.rightText === "Turn around") {
             currentNode = path.right;
             updateUI();
@@ -78,6 +98,7 @@ document.getElementById("rightBtn").addEventListener("click", () => {
 
       if (currentNode.rightText === "Try Again") {
             currentNode = path;
+            key = false;
             updateUI();
             return;
       }
