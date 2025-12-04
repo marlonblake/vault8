@@ -48,7 +48,7 @@ function updateUI() {
       }
 
       // Back button visibility
-      backBtn.style.display = currentNode.parent ? "inline-block" : "none";
+      //backBtn.style.display = currentNode.parent ? "inline-block" : "none";
 }
 
 document.getElementById("leftBtn").addEventListener("click", () => {
@@ -114,11 +114,11 @@ document.getElementById("rightBtn").addEventListener("click", () => {
       }
 });
 
-document.getElementById("backBtn").addEventListener("click", () => {
-      if (currentNode.parent) {
-            currentNode = currentNode.parent;
-            updateUI();
-      }
-});
+// document.getElementById("backBtn").addEventListener("click", () => {
+//       if (currentNode.parent) {
+//             currentNode = currentNode.parent;
+//             updateUI();
+//       }
+// });
 
 updateUI();
